@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeeCapture — Support</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --surface: #f5f5f7;
+            --border: #e5e5e5;
+            --text: #1d1d1f;
+            --text-secondary: #6e6e73;
+            --accent: #0071e3;
+            --radius: 12px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        .wrapper {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 64px 24px 48px;
+        }
+        header { margin-bottom: 48px; }
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            margin-bottom: 6px;
+        }
+        .tagline {
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 48px;
+            margin-bottom: 16px;
+            letter-spacing: -0.2px;
+        }
+        p {
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* ── Contact Card ─────────────────────── */
+        .contact-card {
+            background: var(--surface);
+            border-radius: var(--radius);
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 8px;
+        }
+        .contact-icon {
+            width: 44px; height: 44px;
+            background: var(--accent);
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+        }
+        .contact-icon svg { width: 22px; height: 22px; fill: #fff; }
+        .contact-label {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 2px;
+        }
+        .contact-value {
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        /* ── FAQ Accordion ────────────────────── */
+        .faq-list { margin-top: 8px; }
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+        }
+        .faq-q {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 18px 0;
+            font-size: 15px;
+            font-weight: 600;
+            text-align: left;
+            color: var(--text);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: inherit;
+        }
+        .faq-q::after {
+            content: "+";
+            font-size: 20px;
+            font-weight: 300;
+            color: var(--text-secondary);
+            transition: transform 0.2s;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+        .faq-item.open .faq-q::after {
+            content: "−";
+        }
+        .faq-a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        .faq-item.open .faq-a {
+            max-height: 300px;
+            padding-bottom: 18px;
+        }
+        .faq-a p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        /* ── Legal Section ────────────────────── */
+        .legal-links {
+            display: flex;
+            gap: 24px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+        .legal-links a {
+            font-size: 14px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .legal-links a::before {
+            content: "";
+            width: 6px; height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        /* ── Footer ───────────────────────────── */
+        footer {
+            margin-top: 64px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 480px) {
+            .wrapper { padding: 40px 20px 32px; }
+            h1 { font-size: 26px; }
+            h2 { font-size: 18px; }
+            .contact-card { flex-direction: column; align-items: flex-start; gap: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+
+        <header>
+            <h1>FeeCapture</h1>
+            <p class="tagline">Capture billable revenue after every call</p>
+        </header>
+
+        <!-- ── Contact ──────────────────────────── -->
+        <h2>Contact Us</h2>
+        <div class="contact-card">
+            <div class="contact-icon">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </div>
+            <div>
+                <div class="contact-label">Email — we typically reply within 24 hours</div>
+                <div class="contact-value"><a href="mailto:sololab.studio.official@gmail.com">sololab.studio.official@gmail.com</a></div>
+            </div>
+        </div>
+
+        <!-- ── FAQ ──────────────────────────────── -->
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+
+            <div class="faq-item">
+                <button class="faq-q">How do I log a billable call?</button>
+                <div class="faq-a"><p>Open the Quick Record tab, pick a client, set the duration and rate, and make sure "Billable" is on. The amount is calculated automatically — just add a fee type or note and tap Save.</p></div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-q">How is the amount calculated?</button>
+                <div class="faq-a"><p>The app multiplies the billable time by the rate, applying the billing unit (hourly or per-minute) and rounding rule (exact, up to 6 minutes, or up to 15 minutes) configured for the client or as your default.</p></div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-q">Can I see how much revenue I've captured?</button>
+                <div class="faq-a"><p>The Dashboard shows this month's captured revenue, today's and this week's totals (grouped per currency), your active clients, and your five most recent records.</p></div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-q">What is the difference between Free, Pro, and Premium?</button>
+                <div class="faq-a"><p>Free includes 20 records per month and up to 3 clients. Pro adds up to 200 records per month, 50 clients, CSV/PDF export, and more. Premium offers unlimited records and clients plus all Pro features. Plans are billed through the App Store.</p></div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-q">How do I export my records?</button>
+                <div class="faq-a"><p>Go to Settings → Export Records, choose a time range and client, then export as CSV or PDF. You can also select multiple records in the Records tab and share them as a batch CSV.</p></div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-q">Can I import clients from my contacts?</button>
+                <div class="faq-a"><p>Yes. When adding a client, choose to import from your contacts — the name and phone number are copied to your device only and never uploaded.</p></div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-q">How do I cancel my subscription?</button>
+                <div class="faq-a"><p>Open iOS Settings → tap your name → Subscriptions → FeeCapture → Cancel Subscription. You can also manage it at <a href="https://apps.apple.com/account/subscriptions" target="_blank">apple.com/account/subscriptions</a>. Cancellation takes effect at the end of the current billing period.</p></div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-q">Does the app upload my data?</button>
+                <div class="faq-a"><p>No. All data — clients, call records, billing, and settings — is stored entirely on your device. Nothing is transmitted to any server. Your data never leaves your phone.</p></div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-q">Does FeeCapture work on Android?</button>
+                <div class="faq-a"><p>FeeCapture is currently available on iOS (17.0+). Android support is planned for a future release.</p></div>
+            </div>
+
+        </div>
+
+        <!-- ── Legal ────────────────────────────── -->
+        <h2>Legal</h2>
+        <p style="font-size:14px; color:var(--text-secondary);">
+            FeeCapture is a billable time and fee tracking tool. You are responsible for the
+            accuracy of the data you enter.
+        </p>
+        <div class="legal-links">
+            <a href="privacy_policy.html">Privacy Policy</a>
+            <a href="terms_of_use.html">Terms of Use</a>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 SoloLab Studio. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+    document.querySelectorAll(".faq-q").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const item = btn.parentElement;
+            const wasOpen = item.classList.contains("open");
+            document.querySelectorAll(".faq-item").forEach(i => i.classList.remove("open"));
+            if (!wasOpen) item.classList.add("open");
+        });
+    });
+    </script>
+</body>
+</html>
